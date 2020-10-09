@@ -10,7 +10,9 @@ namespace TMDT.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            var dbContext = new TMDT.Models.TMDTEntities();
+            var model = dbContext.Categories;
+            return View(model);
         }
 
         public ActionResult About()
